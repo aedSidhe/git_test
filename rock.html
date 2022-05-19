@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function computerPlay() {
+            let x = Math.floor(Math.random() * 3);
+            if(x == 0) {
+                return 'Rock';
+            }
+            if(x == 1) {
+                return 'Paper';
+            }
+            if(x == 2) {
+                return 'Scissors';
+            }
+        }
+
+        function play(playerSelection, computerSelection) {
+            let p = playerSelection.toUpperCase();
+            let c = computerSelection.toUpperCase();
+            if(p == 'ROCK' && c == 'PAPER') {
+                return 'You Lose!';
+            }
+            if(p == 'ROCK' && c == 'SCISSORS') {
+                return 'You WIN!';
+            }
+            if(p == 'ROCK' && c == 'ROCK') {
+                return 'Tie!';
+            }
+            if(p == 'PAPER' && c == 'PAPER') {
+                return 'You Tie!';
+            }
+            if(p == 'SCISSORS' && c == 'PAPER') {
+                return 'You WIN!';
+            }
+            if(p == 'SCISSORS' && c == 'SCISSORS') {
+                return 'You Tie!';
+            }
+            if(p == 'PAPER' && c == 'SCISSORS') {
+                return 'You Lose!';
+            }
+            if(p == 'PAPER' && c == 'ROCK') {
+                return 'You Win!';
+            }
+            if(p == 'SCISSORS' && c == 'ROCK') {
+                return 'You Lose!';
+            }
+        }
+        function game() {
+            for(let i = 0; i < 5; i++) {
+                let x = prompt('Choose');
+                let y = computerPlay();
+                console.log(play(x, y));
+            }
+        }
+    </script>
+</body>
+</html>
